@@ -1,0 +1,44 @@
+name: External FastAPI CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout platform repository
+        uses: actions/checkout@v7
+
+      - name: Checkout sample FastAPI application
+        uses: actions/checkout@v7
+        with:
+          repository: nanotaboada/python-samples-fastapi-restful
+          ref: 9b6cca64641402bb30539e2b4d07e408c51cc579
+          path: app
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13.3"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10
+        with:
+          version: "0.12.5"
+
+      - name: Install dependencies
+        working-directory: app
+        run: uv sync --group dev --frozen
+
+      - name: Run automated tests
+        working-directory: app
+        run: uv run pytest
