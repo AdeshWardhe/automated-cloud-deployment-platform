@@ -6,3 +6,13 @@
 *.tfvars
 *.tfvars.json
 crash.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment variables
+.env
+.env.*
+!.env.example
