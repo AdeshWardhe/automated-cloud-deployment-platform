@@ -45,3 +45,12 @@ jobs:
 
       - name: Run Semgrep security scan
         run: uvx semgrep scan --config p/default app
+
+      - name: Run Trivy vulnerability scan
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: app
+          scanners: vuln,secret,misconfig
+          severity: HIGH,CRITICAL
+          exit-code: "0"
