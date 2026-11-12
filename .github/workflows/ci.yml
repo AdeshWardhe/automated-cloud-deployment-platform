@@ -42,3 +42,6 @@ jobs:
       - name: Run automated tests
         working-directory: app
         run: uv run pytest
+
+      - name: Run Semgrep security scan
+        run: uvx semgrep scan --config p/default app
