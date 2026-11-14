@@ -1,0 +1,9 @@
+﻿{
+  "endpoint": "GET /players/",
+  "status_code": 200,
+  "result": "Success",
+  "application": "FastAPI",
+  "deployment": "Docker Compose",
+  "port": 9000,
+  "verification": "API returned JSON player records"
+}
