@@ -9,20 +9,21 @@ on:
 
 permissions:
   contents: read
+  packages: write
 
 jobs:
-  test:
+  test-and-build:
     runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout platform repository
         uses: actions/checkout@v7
 
-      - name: Checkout sample FastAPI application
+      - name: Checkout maintained FastAPI application
         uses: actions/checkout@v7
         with:
-          repository: nanotaboada/python-samples-fastapi-restful
-          ref: 9b6cca64641402bb30539e2b4d07e408c51cc579
+          repository: AdeshWardhe/python-samples-fastapi-restful
+          ref: master
           path: app
 
       - name: Set up Python
@@ -46,7 +47,7 @@ jobs:
       - name: Run Semgrep security scan
         run: uvx semgrep scan --config p/default app
 
-      - name: Run Trivy vulnerability scan
+      - name: Run Trivy filesystem scan
         uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: fs
@@ -54,3 +55,27 @@ jobs:
           scanners: vuln,secret,misconfig
           severity: HIGH,CRITICAL
           exit-code: "0"
+
+      - name: Build Docker image
+        run: docker build -t fastapi-app:ci ./app
+
+      - name: Scan Docker image
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: image
+          image-ref: fastapi-app:ci
+          scanners: vuln
+          severity: HIGH,CRITICAL
+          exit-code: "0"
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Docker image to GHCR
+        run: |
+          docker tag fastapi-app:ci ghcr.io/adeshwardhe/python-samples-fastapi-restful:latest
+          docker push ghcr.io/adeshwardhe/python-samples-fastapi-restful:latest
