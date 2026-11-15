@@ -73,3 +73,5 @@ Build an automated platform that takes an existing FastAPI application through t
 
 ## Evidence policy
 Attach genuine screenshots or logs from the actual runs. Each item should show the relevant command, workflow run, or application response. Do not use mock screenshots or describe planned features as completed.
+
+Latest application configuration: Kubernetes probes, resource limits, and rollback verification completed.
