@@ -30,3 +30,6 @@ Use clear names such as:
 
 ## Important
 The current project has verified local Docker deployment and API functionality. It has not yet been deployed to AWS or Kubernetes. 
+
+
+<img width="1917" height="882" alt="image" src="https://github.com/user-attachments/assets/5e502310-1bb9-4d04-9895-c5133cb94f4b" />
