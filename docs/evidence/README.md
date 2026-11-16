@@ -26,7 +26,7 @@ Use clear names such as:
 - `swagger-http-200.png`
 - `terraform-plan.png`
 
-Only add evidence after capturing it from the real tool or run. Redact tokens, passwords, account identifiers, and other secrets before committing screenshots or logs.
+
 
 ## Important
-The current project has verified local Docker deployment and API functionality. It has not yet been deployed to AWS or Kubernetes. Evidence must reflect that distinction.
+The current project has verified local Docker deployment and API functionality. It has not yet been deployed to AWS or Kubernetes. 
