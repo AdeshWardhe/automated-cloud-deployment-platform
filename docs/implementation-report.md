@@ -60,9 +60,9 @@ Build an automated platform that takes an existing FastAPI application through t
 | Docker Compose local deployment | Healthy |
 | Swagger API check | HTTP 200 verified |
 | Terraform AWS configuration | Validate and plan verified; data lookup only |
-| GHCR publishing | Not implemented yet |
-| Kubernetes / K3s deployment | Not implemented yet |
-| Prometheus / Grafana | Not implemented yet |
+| GHCR publishing | done |
+| Kubernetes / K3s deployment | done |
+| Prometheus / Grafana | done |
 
 
 
