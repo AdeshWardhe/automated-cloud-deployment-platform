@@ -64,14 +64,5 @@ Build an automated platform that takes an existing FastAPI application through t
 | Kubernetes / K3s deployment | Not implemented yet |
 | Prometheus / Grafana | Not implemented yet |
 
-## Next steps
-1. Verify and retain the Trivy scan output.
-2. Add a repeatable Docker build and image publishing workflow to GHCR.
-3. Prepare Kubernetes manifests and deploy to a suitable environment.
-4. Add Prometheus and Grafana monitoring.
-5. Add deployment verification and rollback steps.
 
-## Evidence policy
-Attach genuine screenshots or logs from the actual runs. Each item should show the relevant command, workflow run, or application response. Do not use mock screenshots or describe planned features as completed.
 
-Latest application configuration: Kubernetes probes, resource limits, and rollback verification completed.
