@@ -115,3 +115,7 @@ Screenshots and execution logs will be maintained in `docs/evidence/`.
 ## Project Status
 
 The initial CI pipeline, Semgrep scanning, Docker image build, local container deployment, and API verification have been demonstrated successfully. The remaining cloud-native deployment and monitoring components are under development.
+
+
+published the Docker image to GHCR
+ghcr.io/adeshwardhe/python-samples-fastapi-restful:latest
