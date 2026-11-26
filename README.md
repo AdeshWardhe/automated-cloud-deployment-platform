@@ -112,9 +112,9 @@ Screenshots and execution logs will be maintained in `docs/evidence/`.
 - Configure Prometheus and Grafana monitoring.
 - Implement deployment health checks and rollback procedures.
 
-## Project Status
+## monitoring
+<img width="1917" height="407" alt="image" src="https://github.com/user-attachments/assets/9a387084-945b-4f4d-a30f-6702e451fbeb" />
 
-The initial CI pipeline, Semgrep scanning, Docker image build, local container deployment, and API verification have been demonstrated successfully. The remaining cloud-native deployment and monitoring components are under development.
 
 
 published the Docker image to GHCR
