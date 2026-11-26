@@ -113,7 +113,8 @@ Screenshots and execution logs will be maintained in `docs/evidence/`.
 - Implement deployment health checks and rollback procedures.
 
 ## monitoring
-<img width="1917" height="407" alt="image" src="https://github.com/user-attachments/assets/9a387084-945b-4f4d-a30f-6702e451fbeb" />
+<img width="1483" height="896" alt="image(20261114-162321)" src="https://github.com/user-attachments/assets/0e5823f1-798e-4c1e-829e-3486de88859b" />
+
 
 
 
